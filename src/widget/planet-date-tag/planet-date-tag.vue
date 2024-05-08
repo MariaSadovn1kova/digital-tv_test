@@ -2,10 +2,10 @@
 import { Calendar } from '@/assets';
 
 const props = defineProps<{
-  date: Date;
+  date: string;
 }>();
 
-const formatMaterialDate = props.date.toLocaleDateString('ru-RU', { day: 'numeric',  month: 'long'});
+const formatMaterialDate = new Date(props.date).toLocaleDateString('ru-RU', { day: 'numeric',  month: 'long'});
 </script>
 
 <template>

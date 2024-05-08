@@ -4,7 +4,7 @@ export namespace TMaterial {
     id: string
     title: string
     short_description: string
-    datetime: Date
+    datetime: string
     description_html: string
     description_json: string
   }

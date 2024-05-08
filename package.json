@@ -11,6 +11,10 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@tiptap/extension-placeholder": "^2.3.2",
+    "@tiptap/pm": "^2.3.2",
+    "@tiptap/starter-kit": "^2.3.2",
+    "@tiptap/vue-3": "^2.3.2",
     "axios": "^1.6.8",
     "i18n": "^0.15.1",
     "less": "^4.2.0",

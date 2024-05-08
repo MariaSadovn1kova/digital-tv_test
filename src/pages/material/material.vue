@@ -1,46 +1,19 @@
 <script setup lang="ts">
-import { PlanetDateTag, PlanetBackBtn } from '@/widget';
+import { onMounted, ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 
-const test = new Date();
+import { type TMaterial } from '@/shared/api/material/models';
+import { MaterialAPI } from '@/shared';
+import { PlanetDateTag, PlanetBackBtn, PlanetLoader } from '@/widget';
 
-const t = 
-    {
-        "id": 1,
-        "title": "Как у сов получается поворачивать голову на 270 градусов?",
-        "datetime": "2024-05-06 00:00:00",
-        "short_description": "Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. ",
-        "description_html": "<p>Сова &mdash; хищная птица из отряда &laquo;Совообразные&raquo;. Он включает более двух сотен видов пернатых. Совы распространены по всему земному шару, они обитают в горах, лесах, степях, на морских побережьях и даже на Крайнем Севере. Большая часть из них ведет ночной образ жизни и охотится в темное время суток. В статье подробно узнаем об образе жизни сов, что они едят, особенностях размножения и правилах содержания в доме или квартире.</p>\n<p>Совиное меню в основном включает пищу животного происхождения. Эти хищники долгое время могут обходиться без воды, так как поддерживают водный баланс с помощью крови убитых животных. Филины и некоторые совы больших размеров могут схватить и убить зайца.</p>",
-        "description_json": {
-            "type": "doc",
-            "content": [
-                {
-                    "type": "paragraph",
-                    "attrs": {
-                        "textAlign": "left"
-                    },
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": "Сова — хищная птица из отряда «Совообразные». Он включает более двух сотен видов пернатых. Совы распространены по всему земному шару, они обитают в горах, лесах, степях, на морских побережьях и даже на Крайнем Севере. Большая часть из них ведет ночной образ жизни и охотится в темное время суток. В статье подробно узнаем об образе жизни сов, что они едят, особенностях размножения и правилах содержания в доме или квартире."
-                        }
-                    ]
-                },
-                {
-                    "type": "paragraph",
-                    "attrs": {
-                        "textAlign": "left"
-                    },
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": "Совиное меню в основном включает пищу животного происхождения. Эти хищники долгое время могут обходиться без воды, так как поддерживают водный баланс с помощью крови убитых животных. Филины и некоторые совы больших размеров могут схватить и убить зайца."
-                        }
-                    ]
-                }
-            ]
-        }
-    }
+const route = useRoute();
 
+const material = ref<TMaterial.IMaterial>();
+const materialID = computed(() => route.params.materialID as string);
+
+onMounted(async () => {
+  material.value = await MaterialAPI.getMaterial(materialID.value);
+});
 </script>
 
 <template>
@@ -51,12 +24,14 @@ const t =
        <PlanetBackBtn />
       </div>
 
-      <div class="material__card">
-        <PlanetDateTag :date="test"/>
-        <h1 class="material__title">Как у сов получается поворачивать голову на 270 градусов?</h1>
-        <p class="material__short-descr">Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. </p>
-        <div class="material__text" v-html="t.description_html" />
+      <div class="material__card" v-if="material">
+        <PlanetDateTag :date="material.datetime"/>
+        <h1 class="material__title">{{ material.title }}</h1>
+        <p class="material__short-descr">{{ material.short_description }}</p>
+        <div class="material__text" v-html="material.description_html" />
       </div>
+
+      <PlanetLoader v-else/>
 
     </div>
   </div>

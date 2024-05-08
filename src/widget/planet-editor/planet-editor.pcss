@@ -1,0 +1,36 @@
+.editor {
+  margin-bottom: 20px;
+
+  .editor__button {
+    border-radius: var(--vt-r-button);
+    background: var(--color-button-background);
+    color: var(--color-btn-text);
+    margin: 0px 10px 10px 0px;
+    transition: 0.5s;
+    border: none;
+    padding: 10px;
+
+    &:hover {
+      background: var(--hover-button-background);
+      cursor: pointer;
+    }
+  }
+}
+
+.tiptap {
+  min-height: 40px;
+
+  p {
+    padding: 10px;
+  }
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  font-family: var(--sub-font);
+  font-size: var(--editor-font-size);
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}

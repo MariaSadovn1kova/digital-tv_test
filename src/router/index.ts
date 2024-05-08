@@ -9,7 +9,7 @@ const router = createRouter({
       component: () => import('../pages/materials/materials.vue')
     },
     {
-      path: '/:materialId',
+      path: '/:materialID',
       name: 'material',
       component: () => import('../pages/material/material.vue')
     },
