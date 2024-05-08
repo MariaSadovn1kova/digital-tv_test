@@ -1,0 +1,98 @@
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #F4F6FB;
+
+  --vt-c-black: #14142A;
+
+  --vt-c-gray: #81859C;
+  --vt-c-gray-soft: #BEC2DA;
+
+  --vt-c-blue: #00B2FF;
+  --vt-c-blue-01: #D2F3FF;
+  --vt-c-blue-02: #E7F8FE;
+
+  --vt-r-default: 24px;
+  --vt-r-button: 12px;
+
+  --vt-btn-font-weight: 600;
+
+  --vt-shadow-default: drop-shadow(-9px 21px 13px #0000000A);
+
+
+  --color-background: var(--vt-c-white-soft);
+  --color-navbar-background: var(--vt-c-white);
+  --color-card-background: var(--vt-c-white);
+  --color-button-background: var(--vt-c-blue-02);
+
+  --color-heading: var(--vt-c-black);
+  --color-text: var(--vt-c-black);
+  --color-descr: var(--vt-c-gray);
+  --color-date-tag: var(--vt-c-gray-soft);
+  --color-btn-text: var(--vt-c-blue);
+
+  --radius-planet-card: var(--vt-r-default);
+
+  --hover-shadow-card: var(--vt-shadow-default);
+  --hover-button-background: var(--vt-c-blue-01);
+}
+
+:root {
+  --navbar-height: 84px;
+  --button-height: 44px;
+  --card-descr-height: 76px;
+
+  --card-column: repeat(auto-fill, 276px);
+
+  --container-padding: 0px 144px;
+  --card-padding: 32px 24px;
+  --header-padding: 48px 0px;
+  --button-padding: 10.5px 24px;
+
+  --card-element-bottom-margin: 16px;
+
+  --card-header-font-size: 20px;
+  --card-descr-font-size: 16px;
+}
+
+@media (max-width: 880px) {
+  :root {
+    --container-padding: 0px 16px;
+
+    --card-column: repeat(1, 100%);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

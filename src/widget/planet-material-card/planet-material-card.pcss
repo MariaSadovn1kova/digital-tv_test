@@ -1,0 +1,35 @@
+.material-card {
+  height: 273px;
+  padding: var(--card-padding);
+  border-radius: var(--radius-planet-card);
+  background: var(--color-card-background);
+  transition: 0.5s;
+
+  &:hover {
+    filter: var(--hover-shadow-card);
+    cursor: pointer;
+  }
+
+  .material-card__date-tag {
+    margin-bottom: var(--card-element-bottom-margin);
+    display: flex;
+    align-items: center;
+  }
+
+  .material-card__date {
+    color: var(--color-date-tag);
+    padding: 0px 8px;
+    width: 100%;
+  }
+
+  .material-card__title{
+    font-size: var(--card-header-font-size);
+    margin-bottom: var(--card-element-bottom-margin);
+  }
+
+  .material-card__descr {
+    max-height: var(--card-descr-height);
+    font-size: var(--card-descr-font-size);
+    overflow: hidden;
+  }
+}
