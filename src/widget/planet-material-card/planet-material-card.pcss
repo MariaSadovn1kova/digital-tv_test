@@ -1,8 +1,11 @@
 .material-card {
-  height: 273px;
+  max-width: 288px;
+  height: var(--card-height);
   padding: var(--card-padding);
   border-radius: var(--radius-planet-card);
   background: var(--color-card-background);
+  color: var(--color-heading);
+  text-decoration: none;
   transition: 0.5s;
 
   &:hover {
@@ -11,25 +14,23 @@
   }
 
   .material-card__date-tag {
-    margin-bottom: var(--card-element-bottom-margin);
-    display: flex;
-    align-items: center;
-  }
-
-  .material-card__date {
-    color: var(--color-date-tag);
-    padding: 0px 8px;
-    width: 100%;
+    margin-bottom: var(--card-date-tag-bottom-margin);
   }
 
   .material-card__title{
     font-size: var(--card-header-font-size);
-    margin-bottom: var(--card-element-bottom-margin);
+    margin-bottom: var(--card-title-bottom-margin);
+    font-family: var(--main-font);
+    line-height: var(--card-header-line-height);
+    font-weight: 600;
   }
 
   .material-card__descr {
+    color: var(--color-descr);
+    font-family: var(--sub-font);
     max-height: var(--card-descr-height);
     font-size: var(--card-descr-font-size);
     overflow: hidden;
+    line-height: 19px;
   }
 }

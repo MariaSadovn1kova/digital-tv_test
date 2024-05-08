@@ -3,6 +3,8 @@
 
   "btn": {
     "home": "Создать материал",
-    "material-create": "Сохранить"
+    "material": "Создать историю",
+    "material-create": "Сохранить",
+    "back": "Назад"
   }
 }

@@ -1,29 +1,32 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
 import type { TMaterial } from '@/shared/api/material/models';
-import { Calendar } from '@/assets';
+import { PlanetDateTag } from '@/widget';
 
 const props = defineProps<{
   material: TMaterial.IMaterial;
 }>();
 
 const formatMaterialDate = new Date().toLocaleDateString('ru-RU', { day: 'numeric',  month: 'long'});
+const test = new Date();
 </script>
 
 <template>
-  <div class="material-card">
+  <RouterLink class="material-card" :to="`/${material.id}`">
 
-    <div class="material-card__date-tag">
-      <Calendar />
-      <span class="material-card__date"> {{ formatMaterialDate }} </span>
-    </div>
+    <PlanetDateTag 
+      class="material-card__date-tag"
+      :date="test"
+    />
 
     <h2 class="material-card__title"> {{ material.title }} </h2>
 
-    <div class="material-card__descr" >
-      <span>{{ material.short_description }}</span>
-    </div>
+    <p class="material-card__descr" >
+      {{ material.short_description }}
+    </p>
 
-  </div>
+  </RouterLink>
 </template>
 
 <style scoped lang="postcss">

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  .material {
+    width: 100%;
+    max-width: 1014px;
+    min-width: 100px;
+
+    .material__header {
+      padding: var(--material-header-padding);
+    }
+
+    .material__card {
+      background: var(--color-card-background);
+      border-radius: var(--vt-r-material);
+      padding: var(--material-card-padding);
+      min-height: 660px;
+    }
+
+    .material__title {
+      padding: var(--material-title-padding);
+      font-size: var(--material-title-font-size);
+      line-height: var(--material-title-line-height);
+      font-weight: 600;
+    }
+
+    .material__short-descr {
+      font-family: var(--sub-font);
+      font-size: var(--material-descr-font-size);
+      line-height: var(--material-descr-line-height);
+      margin-bottom: var(--material-descr-bottom-margin);
+    }
+
+    .material__text {
+      font-family: var(--sub-font);
+      font-size: var(--material-text-font-size);
+      line-height: var(--material-descr-line-height);
+      margin-bottom: var(--material-descr-bottom-margin);
+    }
+  }
+}

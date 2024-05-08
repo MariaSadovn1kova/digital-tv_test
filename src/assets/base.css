@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #F4F6FB;
@@ -12,9 +14,8 @@
   --vt-c-blue-02: #E7F8FE;
 
   --vt-r-default: 24px;
+  --vt-r-material: 32px;
   --vt-r-button: 12px;
-
-  --vt-btn-font-weight: 600;
 
   --vt-shadow-default: drop-shadow(-9px 21px 13px #0000000A);
 
@@ -29,16 +30,21 @@
   --color-descr: var(--vt-c-gray);
   --color-date-tag: var(--vt-c-gray-soft);
   --color-btn-text: var(--vt-c-blue);
+  --color-back-btn-text: var(--vt-c-black);
 
   --radius-planet-card: var(--vt-r-default);
 
   --hover-shadow-card: var(--vt-shadow-default);
   --hover-button-background: var(--vt-c-blue-01);
+
+  --main-font: 'SourceSans3-Regular';
+  --sub-font: 'FuturaPT-Book'; 
 }
 
 :root {
   --navbar-height: 84px;
   --button-height: 44px;
+  --card-height: 273px;
   --card-descr-height: 76px;
 
   --card-column: repeat(auto-fill, 276px);
@@ -46,17 +52,50 @@
   --container-padding: 0px 144px;
   --card-padding: 32px 24px;
   --header-padding: 48px 0px;
-  --button-padding: 10.5px 24px;
+  --button-padding: 9px 24px 15px 24px;
+  --material-card-padding: 64px;
+  --material-header-padding: 48px 0px;
+  --material-title-padding: 24px 0px;
 
-  --card-element-bottom-margin: 16px;
+  --card-date-tag-bottom-margin: 20px;
+  --card-title-bottom-margin: 16px;
+  --material-descr-bottom-margin: 36px;
 
+  --card-date-tag-font-size: 16px;
   --card-header-font-size: 20px;
   --card-descr-font-size: 16px;
+  --header-descr-font-size: 36px;
+  --button-font-size: 18px;
+  --material-descr-font-size: 22px;
+  --material-text-font-size: 20px;
+  --material-title-font-size: 36px;
+
+  --card-header-line-height: 24px;
+  --material-descr-line-height: 26px;
+  --material-title-line-height: 43px;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1014px) {
   :root {
+    --card-height: 236px;
+    --card-descr-height: 72px;
+
+    --card-date-tag-bottom-margin: 16px;
+
+    --card-padding: 24px;
     --container-padding: 0px 16px;
+    --material-header-padding: 32px 16px;
+    --material-card-padding: 24px 16px;
+
+    --card-header-font-size: 18px;
+    --card-descr-font-size: 14px;
+    --material-descr-font-size: 18px;
+    --material-title-font-size: 24px;
+    --material-text-font-size: 16px;
+
+    --card-header-line-height: 22px;
+    --material-descr-line-height: 22px;
+    --material-descr-title-height: 29px;
 
     --card-column: repeat(1, 100%);
   }
@@ -72,25 +111,14 @@
 
 body {
   min-height: 100vh;
+  padding-bottom: 120px;
   color: var(--color-text);
   background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: 'SourceSans3-Regular';
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

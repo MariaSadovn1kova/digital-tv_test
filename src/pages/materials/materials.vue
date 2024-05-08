@@ -35,6 +35,21 @@ const materials = [
         :key="material.id"
         :material="material"
       />
+      <PlanetMaterialCard 
+        v-for="material in materials"
+        :key="material.id"
+        :material="material"
+      />
+      <PlanetMaterialCard 
+        v-for="material in materials"
+        :key="material.id"
+        :material="material"
+      />
+      <PlanetMaterialCard 
+        v-for="material in materials"
+        :key="material.id"
+        :material="material"
+      />
     </div>
 
   </div>
