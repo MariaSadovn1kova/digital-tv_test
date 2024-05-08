@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { RouterLink, RouterView, useRoute } from 'vue-router';
 
 import { useMaterialStore } from '@/store/material';
-import { Logo } from '@/assets';
+import { Logo, AddMaterial, Share } from '@/assets';
 import { PlanetBtn } from '@/widget';
 
 const materialStore = useMaterialStore();
@@ -35,14 +35,18 @@ const createMaterial = (): void => {
         >
           <PlanetBtn 
             :text="`btn.${routeName}`"
-          />
+          >
+            <AddMaterial />
+          </PlanetBtn>
         </RouterLink>
         
         <PlanetBtn 
           v-else
           :text="`btn.${routeName}`"
           @click="createMaterial()"
-        />
+        >
+          <Share />
+        </PlanetBtn>
         
       </nav>
     </div>
