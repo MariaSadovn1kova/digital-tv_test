@@ -2,12 +2,18 @@
 import { computed } from 'vue';
 import { RouterLink, RouterView, useRoute } from 'vue-router';
 
+import { useMaterialStore } from '@/store/material';
 import { Logo } from '@/assets';
 import { PlanetBtn } from '@/widget';
 
+const materialStore = useMaterialStore();
 const route = useRoute();
 
 const routeName = computed(() => route.name as string);
+
+const createMaterial = (): void => {
+  materialStore.createMaterial();
+}
 </script>
 
 <template>
@@ -24,12 +30,19 @@ const routeName = computed(() => route.name as string);
 
         <RouterLink 
           class="planet-navbar__link" 
+          v-if="routeName != 'material-create'"
           to="/create"
         >
           <PlanetBtn 
             :text="`btn.${routeName}`"
           />
         </RouterLink>
+        
+        <PlanetBtn 
+          v-else
+          :text="`btn.${routeName}`"
+          @click="createMaterial()"
+        />
         
       </nav>
     </div>

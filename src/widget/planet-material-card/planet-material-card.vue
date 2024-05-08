@@ -7,9 +7,6 @@ import { PlanetDateTag } from '@/widget';
 const props = defineProps<{
   material: TMaterial.IMaterial;
 }>();
-
-const formatMaterialDate = new Date().toLocaleDateString('ru-RU', { day: 'numeric',  month: 'long'});
-const test = new Date();
 </script>
 
 <template>
@@ -17,7 +14,7 @@ const test = new Date();
 
     <PlanetDateTag 
       class="material-card__date-tag"
-      :date="test"
+      :date="material.datetime"
     />
 
     <h2 class="material-card__title"> {{ material.title }} </h2>

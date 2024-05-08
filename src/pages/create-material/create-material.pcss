@@ -22,7 +22,26 @@
       border-radius: var(--vt-r-material);
       padding: var(--material-card-padding);
       min-height: 660px;
+      display: flex;
+      flex-direction: column;
     }
-  
+
+    .create-material__material-title {
+      font-size: var(--create-material-title-font-size);
+      margin-bottom: var(--create-material-title-bottom-margin);
+    }
+
+    .create-material__material-short-descr {
+      font-size: var(--create-material-descr-font-size);
+      margin-bottom: var(--create-material-descr-bottom-margin);
+    }
+
+    .planet-input {
+      border: none;
+    }
   }
+}
+
+::placeholder {
+  color: var(--color-placeholder);
 }

@@ -31,6 +31,7 @@
   --color-date-tag: var(--vt-c-gray-soft);
   --color-btn-text: var(--vt-c-blue);
   --color-back-btn-text: var(--vt-c-black);
+  --color-placeholder: var(--vt-c-gray-soft);
 
   --radius-planet-card: var(--vt-r-default);
 
@@ -61,6 +62,8 @@
   --card-date-tag-bottom-margin: 20px;
   --card-title-bottom-margin: 16px;
   --material-descr-bottom-margin: 36px;
+  --create-material-title-bottom-margin: 24px;
+  --create-material-descr-bottom-margin: 40px;
 
   --card-date-tag-font-size: 16px;
   --card-header-font-size: 20px;
@@ -71,6 +74,8 @@
   --material-text-font-size: 20px;
   --material-title-font-size: 36px;
   --editor-font-size: 20px;
+  --create-material-title-font-size: 36px;
+  --create-material-descr-font-size: 22px;
 
   --card-header-line-height: 24px;
   --material-descr-line-height: 26px;
@@ -125,4 +130,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+input:focus {
+  outline: none !important;
 }

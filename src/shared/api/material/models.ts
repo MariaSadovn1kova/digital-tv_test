@@ -8,4 +8,12 @@ export namespace TMaterial {
     description_html: string
     description_json: string
   }
+  
+  export interface ICreateMaterial {
+    title: string
+    short_description: string
+    datetime: string
+    description_html: string
+    description_json: string
+  }
 }
