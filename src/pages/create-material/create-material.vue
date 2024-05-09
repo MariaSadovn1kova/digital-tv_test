@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { useMaterialStore } from '@/store/material';
@@ -22,6 +22,14 @@ const materialText = computed({
   get: () => materialStore.materialText,
   set: (value) => materialStore.materialText = value
 });
+
+const windowWidth = ref(window.innerWidth);
+
+onMounted(() => {
+  window.addEventListener('resize', () => {
+    windowWidth.value = window.innerWidth;
+  });
+});
 </script>
 
 <template>
@@ -29,7 +37,7 @@ const materialText = computed({
     <div class="create-material">
 
       <div class="create-material__header">
-       <PlanetBackBtn />
+       <PlanetBackBtn v-if="windowWidth > 1014"/>
        <h2 class="create-material__title">{{ $t('create_material') }}</h2>
       </div>
       

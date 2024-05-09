@@ -14,7 +14,6 @@ onMounted(() => {
     windowWidth.value = window.innerWidth;
   });
 });
-
 </script>
 
 <template>

@@ -40,6 +40,7 @@
 
   --main-font: 'SourceSans3-Regular';
   --sub-font: 'FuturaPT-Book'; 
+  --button-font: 'FuturaPT-Demi';
 }
 
 :root {
@@ -53,10 +54,11 @@
   --container-padding: 0px 144px;
   --card-padding: 32px 24px;
   --header-padding: 48px 0px;
-  --create-material-header-padding: 32px 0px 0px 0px;
+  --create-material-title-padding: 32px 0px 0px 0px;
   --button-padding: 9px 24px 15px 24px;
   --material-card-padding: 64px;
   --material-header-padding: 48px 0px;
+  --create-material-header-padding: 48px 0px;
   --material-title-padding: 24px 0px;
 
   --card-date-tag-bottom-margin: 20px;
@@ -84,14 +86,18 @@
 
 @media (max-width: 1014px) {
   :root {
-    --card-height: 236px;
+    --card-height: 246px;
     --card-descr-height: 72px;
 
     --card-date-tag-bottom-margin: 16px;
+    --create-material-title-bottom-margin: 12px;
+    --create-material-descr-bottom-margin: 24px;
 
     --card-padding: 24px;
     --container-padding: 0px 16px;
     --material-header-padding: 32px 16px;
+    --create-material-title-padding: 0px; 
+    --create-material-header-padding: 32px 0px;
     --material-card-padding: 24px 16px;
     --button-padding: 0 8px;
 
@@ -100,6 +106,10 @@
     --material-descr-font-size: 18px;
     --material-title-font-size: 24px;
     --material-text-font-size: 16px;
+    --header-descr-font-size: 24px;
+    --create-material-title-font-size: 24px;
+    --create-material-descr-font-size: 18px;
+    --editor-font-size: 16px;
 
     --card-header-line-height: 22px;
     --material-descr-line-height: 22px;
