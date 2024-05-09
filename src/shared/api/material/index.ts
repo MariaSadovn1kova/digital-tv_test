@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 import { type TMaterial } from '@/shared/api/material/models';
 
 const api = axios.create({
@@ -14,5 +14,5 @@ export default {
   getMaterial: (id: string): Promise<TMaterial.IMaterial> => api.get<TMaterial.IMaterial>(`${baseURL}/${id}`).then((res) => res.data),
 
   createMaterial: (data: TMaterial.ICreateMaterial):
-  Promise<void> => axios.post<void>(`${baseURL}/save`, data).then((res) => res.data),
+  Promise<AxiosResponse<TMaterial.IMaterial>> => axios.post<TMaterial.IMaterial>(`api/${baseURL}/save`, data),
 };

@@ -21,7 +21,11 @@ export const useMaterialStore = defineStore('material', {
           datetime: new Date().toISOString(),
           description_html: this.materialText,
           description_json: ''
-        })
+        });
+
+        this.materialTitle = '';
+        this.materialDescr = '';
+        this.materialText = '';
       },
     }
   });
