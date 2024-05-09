@@ -1,4 +1,4 @@
-import './assets/base.css'
+import './assets/base.pcss'
 import i18n from '@/shared/lib';
 
 import { createApp } from 'vue'
